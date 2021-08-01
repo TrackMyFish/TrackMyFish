@@ -16,9 +16,13 @@ Sure...
 
 ![screenshot one](/assets/images/screenshots/trackmyfish1.png)
 
-# Running Locally
+# Running TrackMyFish
 
-Currently, the only way to run TrackMyFish is to run each component (frontend and backend) individually. In the near future, the frontend will be compiled and served from the backend, and TrackMyFish will be dockerized.
+The easiest way of running TrackMyFish is using Docker. An example `docker-compose.yaml` file has been provided for this purpose.
+
+**Note:** Because the migration image depends on the database being fully initialised, which doesn't happen straight away, the first call to `docker-compose` will fail. Just wait a couple of minutes and run it again, and it should succeed. This issue is being tracked in [#1](https://github.com/TrackMyFish/TrackMyFish/issues/1)
+
+## Non-docker method
 
 ## Pre-requisites
 

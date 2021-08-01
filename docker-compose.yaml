@@ -1,0 +1,45 @@
+---
+version: "3"
+services:
+  trackmyfish:
+    image: simondrake/trackmyfish:v1alpha1
+    container_name: trackmyfish
+    networks:
+      - trackmyfish
+    depends_on:
+      - trackmyfish_db
+    volumes:
+      - ${HOME}/trackmyfish/config:/config
+    ports:
+      - 8443:8443
+    restart: unless-stopped
+  trackmyfish_db:
+    image: postgres
+    container_name: trackmyfish_db
+    networks:
+      - trackmyfish
+    environment:
+      - POSTGRES_PASSWORD=supersecretpassword
+      - POSTGRES_USER=trackmyfish
+      - POSTGRES_DB=trackmyfish
+    volumes:
+      - ${HOME}/trackmyfish/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+  trackmyfish_migrations:
+    image: simondrake/trackmyfish_migrations:v1alpha1
+    container_name: trackmyfish_migrations
+    networks:
+      - trackmyfish
+    depends_on:
+      - trackmyfish_db
+    environment:
+      - DATABASE_HOST=trackmyfish_db
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=trackmyfish
+      - DATABASE_PASSWORD=supersecretpassword
+      - DATABASE_NAME=trackmyfish
+
+networks:
+  trackmyfish:
