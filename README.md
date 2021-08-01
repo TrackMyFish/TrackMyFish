@@ -24,8 +24,6 @@ The easiest way of running TrackMyFish is using Docker. An example `docker-compo
 
 ## Non-docker method
 
-## Pre-requisites
-
 * Postgres should be running locally, and the [TrackMyFish migration package](https://github.com/TrackMyFish/db/blob/main/main.go) should be run to create the neccessary database configuration.
   * Note: Currently, the database credentials are hardcoded in `main.go`, this will be served from a config file in the future.
 * Run the backend, by running `make run` from the [backend](https://github.com/TrackMyFish/backend) project
