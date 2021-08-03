@@ -22,6 +22,12 @@ The easiest way of running TrackMyFish is using Docker. An example `docker-compo
 
 **Note:** Because the migration image depends on the database being fully initialised, which doesn't happen straight away, the first call to `docker-compose` will fail. Just wait a couple of minutes and run it again, and it should succeed. This issue is being tracked in [#1](https://github.com/TrackMyFish/TrackMyFish/issues/1)
 
+## Updating
+
+```
+docker-compose pull && docker-compose up -d && docker image prune -f
+```
+
 ## Non-docker method
 
 * Postgres should be running locally, and the [TrackMyFish migration package](https://github.com/TrackMyFish/db/blob/main/main.go) should be run to create the neccessary database configuration.
