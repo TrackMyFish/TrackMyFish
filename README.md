@@ -21,6 +21,11 @@ Sure...
 
 ![Fish Tracker](/assets/images/screenshots/trackmyfish1.png)
 ![Tank Statistic Tracker](/assets/images/screenshots/trackmyfish2.png)
+![Hash-Decoder](/assets/images/screenshots/trackmyfish3.png)
+
+## Can I share my list of fish with other people?
+
+Yes! That's what the Hash-Decoder is for! If someone shares their hash with you, put it in, click "Submit" and you'll see what fish they have!
 
 # Running TrackMyFish
 
